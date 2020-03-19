@@ -1,0 +1,653 @@
+Author: Joshua DeNio
+
+ To compile: cd to the correct folder and enter:
+ g++ -O3 -w denioAssignment01.cpp -lpthread -o denioAssignment01 
+ 
+ To run the program:
+ Note: The k value is the number of friend recommendations per node.
+   and n is the number of threads.
+ ./denioAssignment01 <graph file to be used> <k value> <n value>
+
+ Example:
+ ./denioAssignment01 toyGraph1.txt 2 4
+
+ User input will be used for the thread count.
+
+Current bugs: 
+No known bugs
+
+Run times:
+Note: all tests were run on a 2 core macbook.
+
+Mac:assignment01 turtle$ ./denioAssignment01 toyGraph1.txt 2 4
+Graph has 6 nodes
+0 1 1 1 1 0 
+1 0 0 1 0 0 
+1 0 0 0 1 1 
+1 1 0 0 0 1 
+1 0 1 0 0 1 
+0 0 1 1 1 0 
+
+thread 0 start 0 end 1
+thread 1 start 1 end 2
+thread 2 start 2 end 3
+thread 3 start 3 end 6
+Time elapsed: 0.000524998
+
+The recommended friends for 0 are:  5
+
+The recommended friends for 1 are:  2 4
+
+The recommended friends for 2 are:  3 1
+
+The recommended friends for 3 are:  2 4
+
+The recommended friends for 4 are:  3 1
+
+The recommended friends for 5 are:  0 1
+
+-----------------------------------------------------------------------
+
+Mac:assignment01 turtle$ ./denioAssignment01 graphV5000.txt 2 1
+Graph has 5000 nodes
+thread 0 start 0 end 5000
+Time elapsed: 216.872
+
+The recommended friends for 0 are:  1191 713
+
+The recommended friends for 1 are:  3997 3674
+
+The recommended friends for 2 are:  2111 160
+
+The recommended friends for 3 are:  872 2665
+
+The recommended friends for 4 are:  4187 4481
+
+The recommended friends for 5 are:  3617 4786
+
+-----------------------------------------------------------------------
+
+Mac:assignment01 turtle$ ./denioAssignment01 graphV5000.txt 2 2
+Graph has 5000 nodes
+thread 0 start 0 end 2500
+thread 1 start 2500 end 5000
+Time elapsed: 118.043
+
+The recommended friends for 0 are:  1191 713
+
+The recommended friends for 1 are:  3997 3674
+
+The recommended friends for 2 are:  2111 160
+
+The recommended friends for 3 are:  872 2665
+
+The recommended friends for 4 are:  4187 4481
+
+The recommended friends for 5 are:  3617 4786
+
+-----------------------------------------------------------------------
+
+Mac:assignment01 turtle$ ./denioAssignment01 graphV5000.txt 2 4
+Graph has 5000 nodes
+
+Time elapsed: 120.858
+
+The recommended friends for 0 are:  1191 713
+
+The recommended friends for 1 are:  3997 3674
+
+The recommended friends for 2 are:  2111 160
+
+The recommended friends for 3 are:  872 2665
+
+The recommended friends for 4 are:  4187 4481
+
+-----------------------------------------------------------------------
+
+Mac:assignment01 turtle$ ./denioAssignment01 graphV5000.txt 2 6
+Graph has 5000 nodes
+thread thread 01 start  start thread 0833thread thread thread 2 end  end 345 start 8331666 start  start  start 1666
+
+Time elapsed: 130.701
+
+The recommended friends for 0 are:  1191 713
+
+The recommended friends for 1 are:  3997 3674
+
+The recommended friends for 2 are:  2111 160
+
+The recommended friends for 3 are:  872 2665
+
+The recommended friends for 4 are:  4187 4481
+
+The recommended friends for 5 are:  3617 4786
+
+-----------------------------------------------------------------------
+
+Mac:assignment01 turtle$ ./denioAssignment01 graphV5000.txt 2 8
+Graph has 5000 nodes
+thread 0 start 0 end 625
+thread 1 start 625 end 1250
+thread 2 start 1250 end 1875
+thread 3 start 1875 end 2500
+thread 4 start 2500 end 3125
+thread 5 start 3125 end 3750
+
+Time elapsed: 122.845
+
+The recommended friends for 0 are:  1191 713
+
+The recommended friends for 1 are:  3997 3674
+
+The recommended friends for 2 are:  2111 160
+
+The recommended friends for 3 are:  872 2665
+
+The recommended friends for 4 are:  4187 4481
+
+The recommended friends for 5 are:  3617 4786
+
+
+-----------------------------------------------------------------------
+
+Mac:assignment01 turtle$ ./denioAssignment01 graphV5000.txt 2 10
+Graph has 5000 nodes
+
+
+Time elapsed: 120.946
+
+The recommended friends for 0 are:  1191 713
+
+The recommended friends for 1 are:  3997 3674
+
+The recommended friends for 2 are:  2111 160
+
+The recommended friends for 3 are:  872 2665
+
+The recommended friends for 4 are:  4187 4481
+
+The recommended friends for 5 are:  3617 4786
+
+-----------------------------------------------------------------------
+
+Mac:assignment01 turtle$ ./denioAssignment01 graphV5000.txt 2 12
+Graph has 5000 nodes
+thread thread 10thread  start  start 2thread 4160thread  start 3 end  end thread 4832 start 832thread 4165 start thread  end 1248
+thread 6
+ start thread 166471248 end thread thread 8 start 20809 end  start 
+16641011 start 2496 end  start 20802912
+ start  start 3328 end 24963744
+ end 41604576 end 2912
+ end 3328 end  end 3744
+4160
+45765000
+
+
+
+Time elapsed: 121.72
+
+The recommended friends for 0 are:  1191 713
+
+The recommended friends for 1 are:  3997 3674
+
+The recommended friends for 2 are:  2111 160
+
+The recommended friends for 3 are:  872 2665
+
+The recommended friends for 4 are:  4187 4481
+
+The recommended friends for 5 are:  3617 4786
+
+The recommended friends for 6 are:  1355 2330
+
+
+
+-----------------------------------------------------------------------
+
+Mac:assignment01 turtle$ ./denioAssignment01 graphV5000.txt 2 14
+Graph has 5000 nodes
+thread thread 0thread 1 start 2 start thread 0 start 357thread 3 end 714thread  end 4 start thread 357 end thread 5714 start 1071thread 6
+1071thread 7 start 
+1428thread  end 8 start thread 
+thread 9 start 1785 end 101428 start 21421112 start 2499 end 1785 start 
+2856 end  start  start 3213 end 2142
+3570 end 249939274284 end 2856
+ end 3213
+ end  end 3570
+3927
+42844641
+
+
+
+thread 13 start 4641 end 5000
+Time elapsed: 121.768
+
+The recommended friends for 0 are:  1191 713
+
+The recommended friends for 1 are:  3997 3674
+
+The recommended friends for 2 are:  2111 160
+
+The recommended friends for 3 are:  872 2665
+
+The recommended friends for 4 are:  4187 4481
+
+The recommended friends for 5 are:  3617 4786
+
+-----------------------------------------------------------------------
+
+Mac:assignment01 turtle$ ./denioAssignment01 graphV5000.txt 2 16
+Graph has 5000 nodes
+thread 0 start 0 end 312
+thread 1 start 312 end 624
+thread 2 start 624 end 936
+thread 3 start 936 end 1248
+thread 4 start 1248 end 1560
+thread 5 start 1560 end 1872
+thread 6 start 1872 end 2184
+thread 7 start 2184 end 2496
+thread 8 start 2496 end 2808
+thread 9 start 2808 end 3120
+thread 10 start 3120 end 3432
+thread 11 start 3432 end 3744
+thread 12 start 3744 end 4056
+thread 13 start 4056 end 4368
+thread thread 1415 start  start 43684680 end  end 46805000
+
+Time elapsed: 120.353
+
+The recommended friends for 0 are:  1191 713
+
+The recommended friends for 1 are:  3997 3674
+
+The recommended friends for 2 are:  2111 160
+
+The recommended friends for 3 are:  872 2665
+
+The recommended friends for 4 are:  4187 4481
+
+The recommended friends for 5 are:  3617 4786
+
+-----------------------------------------------------------------------
+graphV5000
+-----------------------------------------------------------------------
+denio@lab16:~/Documents/assignment01$ ./denioAssignment01 graphV10000.txt 2 1
+Graph has 10000 nodes
+thread 0 start 0 end 10000
+Time elapsed: 1027.73
+
+The recommended friends for 0 are:  9715 4562
+
+The recommended friends for 1 are:  430 4670
+
+The recommended friends for 2 are:  9154 4371
+
+The recommended friends for 3 are:  248 2985
+
+The recommended friends for 4 are:  2432 6740
+
+The recommended friends for 5 are:  4042 8032
+
+The recommended friends for 6 are:  612 4552
+
+The recommended friends for 7 are:  680 8420
+
+The recommended friends for 8 are:  1381 3186
+
+-----------------------------------------------------------------------
+
+Mdenio@lab16:~/Documents/assignment01$ ./denioAssignment01 graphV10000.txt 2 2
+Graph has 10000 nodes
+thread 0 start 0 end 5000
+thread 1 start 5000 end 10000
+Time elapsed: 514.384
+
+The recommended friends for 0 are:  9715 4562
+
+The recommended friends for 1 are:  430 4670
+
+The recommended friends for 2 are:  9154 4371
+
+The recommended friends for 3 are:  248 2985
+
+The recommended friends for 4 are:  2432 6740
+
+
+
+
+-----------------------------------------------------------------------
+
+denio@lab18:~/Documents/assignment01$ ./denioAssignment01 graphV10000.txt 2 4
+Graph has 10000 nodes
+thread 0 start 0 end 2500
+thread 1 start 2500 end 5000
+thread 3 start 7500 end 10000
+thread 2 start 5000 end 7500
+Time elapsed: 234.17
+
+The recommended friends for 0 are:  9715 4562
+
+The recommended friends for 1 are:  430 4670
+
+The recommended friends for 2 are:  9154 4371
+
+The recommended friends for 3 are:  248 2985
+
+The recommended friends for 4 are:  2432 6740
+
+The recommended friends for 5 are:  4042 8032
+
+-----------------------------------------------------------------------
+
+denio@lab18:~/Documents/assignment01$ ./denioAssignment01 graphV10000.txt 2 6
+Graph has 10000 nodes
+thread thread 0 start 1 start 0 end 1666 end 16663332
+thread 2 start 3332 end 4998
+
+thread thread 43 start  start 4998 end 66646664
+ end 8330
+thread 5 start 8330 end 10000
+Time elapsed: 204.048
+
+The recommended friends for 0 are:  9715 4562
+
+The recommended friends for 1 are:  430 4670
+
+The recommended friends for 2 are:  9154 4371
+
+The recommended friends for 3 are:  248 2985
+
+The recommended friends for 4 are:  2432 6740
+
+
+
+-----------------------------------------------------------------------
+
+enio@lab16:~/Documents/assignment01$ ./denioAssignment01 graphV10000.txt 2 8
+Graph has 10000 nodes
+thread 0 start 0 end 1250
+thread thread thread 4 start 250003 end  start thread 625037501 end 5000
+
+ start 1250 end 2500
+thread 7 start 8750 end 10000
+thread  start thread 6 start 7500 end 87502500
+ end 3750
+5 start 6250 end 7500
+Time elapsed: 199.659
+
+The recommended friends for 0 are:  9715 4562
+
+The recommended friends for 1 are:  430 4670
+
+The recommended friends for 2 are:  9154 4371
+
+The recommended friends for 3 are:  248 2985
+
+The recommended friends for 4 are:  2432 6740
+
+
+-----------------------------------------------------------------------
+
+denio@lab18:~/Documents/assignment01$ ./denioAssignment01 graphV10000.txt 2 10
+Graph has 10000 nodes
+thread 0 start 0 end 1000
+thread 1 start 1000 end 2000
+thread 3 start 3000 end 4000
+thread 2 start 2000 end 3000
+thread 4 start 4000 end 5000
+thread 5 start 5000 end 6000
+thread 7 start 7000 end 8000
+thread 8 start 8000 end 9000
+thread 9 start 9000 end 10000
+thread 6 start 6000 end 7000
+Time elapsed: 178.239
+
+The recommended friends for 0 are:  9715 4562
+
+The recommended friends for 1 are:  430 4670
+
+The recommended friends for 2 are:  9154 4371
+
+The recommended friends for 3 are:  248 2985
+
+The recommended friends for 4 are:  2432 6740
+
+The recommended friends for 5 are:  4042 8032
+
+
+-----------------------------------------------------------------------
+
+denio@lab16:~/Documents/assignment01$ ./denioAssignment01 graphV10000.txt 2 12
+Graph has 10000 nodes
+thread 0 start 0 end 833
+thread thread 2 start 3 start 16662499 end  end 2499
+3332thread 4 start 3332 end 4165
+thread 5 start 4165 end 4998
+thread 1 start 833 end 
+thread 6 start 4998 end 5831
+1666
+thread 7 start 5831 end 6664
+thread 10 start 8330 end 9163
+thread 8 start 6664 end 7497
+thread 11 start 9163 end 10000
+thread 9 start 7497 end 8330
+Time elapsed: 201.882
+
+The recommended friends for 0 are:  9715 4562
+
+The recommended friends for 1 are:  430 4670
+
+The recommended friends for 2 are:  9154 4371
+
+The recommended friends for 3 are:  248 2985
+
+The recommended friends for 4 are:  2432 6740
+
+The recommended friends for 5 are:  4042 8032
+
+-----------------------------------------------------------------------
+
+denio@lab16:~/Documents/assignment01$ ./denioAssignment01 graphV10000.txt 2 14
+Graph has 10000 nodes
+thread 0 start 0 end 714
+thread 1 start 714 end 1428
+thread thread 3 start 2142 end 2856
+thread 4 start 2856 end 3570
+5 start 3570 end 4284
+thread 7 start 4998 end 5712
+thread 11 start 7854 end 8568
+thread 12 start 8568 end 9282
+thread 2 start 1428 end 2142
+thread 6 start 4284 end 4998
+thread 10 start 7140 end 7854
+thread 8 start 5712 end 6426
+thread 9 start 6426 end 7140
+thread 13 start 9282 end 10000
+Time elapsed: 202.095
+
+The recommended friends for 0 are:  9715 4562
+
+The recommended friends for 1 are:  430 4670
+
+The recommended friends for 2 are:  9154 4371
+
+The recommended friends for 3 are:  248 2985
+
+The recommended friends for 4 are:  2432 6740
+
+The recommended friends for 5 are:  4042 8032
+
+The recommended friends for 6 are:  612 4552
+
+-----------------------------------------------------------------------
+
+denio@lab18:~/Documents/assignment01$ ./denioAssignment01 graphV10000.txt 2 16
+Graph has 10000 nodes
+thread thread 0 start 1 start 0625 end 1250
+ end 625
+thread 3 start 1875 end 2500
+thread 6 start 3750 end 4375
+thread 5 start 3125 end 3750
+thread 7 start 4375 end 5000
+thread 4 start 2500 end 3125
+thread 12 start 7500 end 8125
+thread 15 start 9375 end 10000
+thread 14 start 8750 end 9375
+thread thread 8 start 5000 end 5625
+thread 9 start 5625 end 6250
+thread 2 start 1250 end 1875
+thread 11 start 6875 end 7500
+10 start 6250 end 6875
+thread 13 start 8125 end 8750
+Time elapsed: 178.983
+
+The recommended friends for 0 are:  9715 4562
+
+The recommended friends for 1 are:  430 4670
+
+The recommended friends for 2 are:  9154 4371
+
+The recommended friends for 3 are:  248 2985
+
+The recommended friends for 4 are:  2432 6740
+
+The recommended friends for 5 are:  4042 8032
+
+
+
+-----------------------------------------------------------------------
+
+denio@lab18:~/Documents/assignment01$ ./denioAssignment01 graphV15000 2 1
+Graph has 1 nodes
+0 
+
+thread 0 start 0 end 1
+Time elapsed: 0.000280142
+
+The recommended friends for 0 are: 
+denio@lab18:~/Documents/assignment01$ ./denioAssignment01 graphV15000 2 2
+Graph has 1 nodes
+0 
+
+thread 0 start 0 end 0
+thread 1 start 0 end 1
+Time elapsed: 0.000267982
+
+The recommended friends for 0 are: 
+denio@lab18:~/Documents/assignment01$ ./denioAssignment01 graphV15000 2 4
+Graph has 1 nodes
+0 
+
+thread 0 start 0 end 0
+thread 1 start 0 end 0
+thread 2 start 0 end 0
+thread 3 start 0 end 1
+Time elapsed: 0.000257969
+
+The recommended friends for 0 are: 
+denio@lab18:~/Documents/assignment01$ ./denioAssignment01 graphV15000 2 6
+Graph has 1 nodes
+0 
+
+thread 0 start 0 end 0
+thread 1 start 0 end 0
+thread 2 start 0 end 0
+thread 3 start 0 end 0
+thread 4 start 0 end 0
+thread 5 start 0 end 1
+Time elapsed: 0.000597954
+
+The recommended friends for 0 are: 
+denio@lab18:~/Documents/assignment01$ ./denioAssignment01 graphV15000 2 8
+Graph has 1 nodes
+0 
+
+thread 0 start 0 end 0
+thread 1 start 0 end 0
+thread 2 start 0 end 0
+thread 3 start 0 end 0
+thread 4 start 0 end 0
+thread 5 start 0 end 0
+thread 6 start 0 end 0
+thread 7 start 0 end 1
+Time elapsed: 0.000758886
+
+The recommended friends for 0 are: 
+denio@lab18:~/Documents/assignment01$ ./denioAssignment01 graphV15000 2 10
+Graph has 1 nodes
+0 
+
+thread 0 start 0 end 0
+thread 1 start 0 end 0
+thread 2 start 0 end 0
+thread 3 start 0 end 0
+thread 4 start 0 end 0
+thread 5 start 0 end 0
+thread 6 start 0 end 0
+thread 7 start 0 end 0
+thread 8 start 0 end 0
+thread 9 start 0 end 1
+Time elapsed: 0.000807047
+
+The recommended friends for 0 are: 
+denio@lab18:~/Documents/assignment01$ ./denioAssignment01 graphV15000 2 12
+Graph has 1 nodes
+0 
+
+thread 0 start 0 end 0
+thread 1 start 0 end 0
+thread 2 start 0 end 0
+thread 3 start 0 end 0
+thread 4 start 0 end 0
+thread 5 start 0 end 0
+thread 6 start 0 end 0
+thread 7 start 0 end 0
+thread 8 start 0 end 0
+thread 9 start 0 end 0
+thread 10 start 0 end 0
+thread 11 start 0 end 1
+Time elapsed: 0.000849962
+
+The recommended friends for 0 are: 
+denio@lab18:~/Documents/assignment01$ ./denioAssignment01 graphV15000 2 14
+Graph has 1 nodes
+0 
+
+thread 0 start 0 end 0
+thread 1 start 0 end 0
+thread 2 start 0 end 0
+thread 3 start 0 end 0
+thread 4 start 0 end 0
+thread 5 start 0 end 0
+thread 6 start 0 end 0
+thread 7 start 0 end 0
+thread 8 start 0 end 0
+thread 9 start 0 end 0
+thread 10 start 0 end 0
+thread 11 start 0 end 0
+thread 12 start 0 end 0
+thread 13 start 0 end 1
+Time elapsed: 0.00109315
+
+The recommended friends for 0 are: 
+denio@lab18:~/Documents/assignment01$ ./denioAssignment01 graphV15000 2 16
+Graph has 1 nodes
+0 
+
+thread 0 start 0 end 0
+thread 1 start 0 end 0
+thread 2 start 0thread  end 3 start 00 end 
+0thread 4
+ start 0 end 0
+thread 5 start 0 end 0
+thread 7 start 0 end 0
+thread 6 start thread 08 start 0 end 0 end 
+0
+thread thread 10 start 0 end 0
+thread 911 start 0 end  start 0
+0 end 0
+thread 12 start 0 end 0
+thread 13 start 0 end 0
+thread 14 start 0 end 0
+thread 15 start 0 end 1
+Time elapsed: 0.000662088
