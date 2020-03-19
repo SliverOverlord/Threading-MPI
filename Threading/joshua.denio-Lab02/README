@@ -1,0 +1,75 @@
+To run the mutex program run the command: gcc -g -Wall -o lab2_mutex lab2_mutex.c -lpthread
+
+Followed by:./lab2_mutex <number of threads> <m> <n>
+./lab2_mutex 4 1000 1000
+
+
+
+
+mpi@turtle:~/Documents/classes/CSCI615/joshua.denio-Lab02$ gcc -g -Wall -o lab2_mutex lab2_mutex.c -lpthread
+mpi@turtle:~/Documents/classes/CSCI615/joshua.denio-Lab02$ ./lab2_mutex 1 1000 1000
+Thread 0 > local_m = 1000, sub = 1000000 count = 1
+Thread 0 > Elapsed time = 4.257989e-02 seconds
+mpi@turtle:~/Documents/classes/CSCI615/joshua.denio-Lab02$ ./lab2_mutex 2 1000 1000
+Thread 1 > local_m = 500, sub = 1000000 count = 2
+Thread 0 > local_m = 500, sub = 500000 count = 2
+Thread 0 > Elapsed time = 2.802896e-02 seconds
+Thread 1 > Elapsed time = 3.093910e-02 seconds
+mpi@turtle:~/Documents/classes/CSCI615/joshua.denio-Lab02$ ./lab2_mutex 4 1000 1000
+Thread 2 > local_m = 250, sub = 750000 count = 4
+Thread 3 > local_m = 250, sub = 1000000 count = 4
+Thread 0 > local_m = 250, sub = 250000 count = 4
+
+Thread 2 > Elapsed time = 1.804614e-02 seconds
+Thread 3 > Elapsed time = 1.798797e-02 seconds
+Thread 1 > Elapsed time = 1.858091e-02 seconds
+Thread 0 > Elapsed time = 1.884508e-02 seconds
+mpi@turtle:~/Documents/classes/CSCI615/joshua.denio-Lab02$ ./lab2_mutex 4 2000 2000
+Thread 1 > local_m = 500, sub = 2000000 count = 4
+Thread 0 > local_m = 500, sub = 1000000 count = 4
+Thread 2 > local_m = 500, sub = 3000000 count = 4
+Thread 3 > local_m = 500, sub = 4000000 count = 4
+Thread 2 > Elapsed time = 4.520798e-02 seconds
+Thread 0 > Elapsed time = 4.662704e-02 seconds
+Thread 3 > Elapsed time = 4.730511e-02 seconds
+Thread 1 > Elapsed time = 4.768705e-02 seconds
+mpi@turtle:~/Documents/classes/CSCI615/joshua.denio-Lab02$ ./lab2_mutex 4 3000 3000
+Thread 2 > local_m = 750, sub = 6750000 count = 4
+Thread 3 > local_m = 750, sub = 9000000 count = 4
+Thread 0 > local_m = 750, sub = 2250000 count = 4
+
+Thread 2 > Elapsed time = 8.734584e-02 seconds
+Thread 3 > Elapsed time = 9.195995e-02 seconds
+Thread 0 > Elapsed time = 9.302998e-02 seconds
+Thread 1 > Elapsed time = 9.636593e-02 seconds
+mpi@turtle:~/Documents/classes/CSCI615/joshua.denio-Lab02$ 
+------------------------------------------------------------------
+To compile and run lab2_sem.c
+Enter the command: gcc -g -Wall -o lab2_sem lab2_sem.c -lpthread
+Followed by: ./lab2_sem <number of threads> <m> <n>
+Example: ./lab2_sem 2 1000 1000
+
+
+mpi@turtle:~/Documents/classes/CSCI615/joshua.denio-Lab02$ gcc -g -Wall -o lab2_sem lab2_sem.c -lpthread
+mpi@turtle:~/Documents/classes/CSCI615/joshua.denio-Lab02$ ./lab2_sem 1 1000 1000
+Thread 0 > Elapsed time = 4.525304e-02 seconds
+mpi@turtle:~/Documents/classes/CSCI615/joshua.denio-Lab02$ ./lab2_sem 2 1000 1000
+Thread 0 > Elapsed time = 2.704692e-02 seconds
+Thread 1 > Elapsed time = 3.596997e-02 seconds
+mpi@turtle:~/Documents/classes/CSCI615/joshua.denio-Lab02$ ./lab2_sem 4 1000 1000
+Thread 1 > Elapsed time = 8.787155e-03 seconds
+Thread 3 > Elapsed time = 1.767015e-02 seconds
+Thread 0 > Elapsed time = 1.789308e-02 seconds
+Thread 2 > Elapsed time = 1.871610e-02 seconds
+mpi@turtle:~/Documents/classes/CSCI615/joshua.denio-Lab02$ ./lab2_sem 4 2000 2000
+Thread 1 > Elapsed time = 3.448701e-02 seconds
+Thread 0 > Elapsed time = 4.464984e-02 seconds
+Thread 2 > Elapsed time = 4.530501e-02 seconds
+Thread 3 > Elapsed time = 4.572105e-02 seconds
+mpi@turtle:~/Documents/classes/CSCI615/joshua.denio-Lab02$ ./lab2_sem 4 3000 3000
+Thread 1 > Elapsed time = 7.712317e-02 seconds
+Thread 3 > Elapsed time = 8.937621e-02 seconds
+Thread 2 > Elapsed time = 9.240985e-02 seconds
+Thread 0 > Elapsed time = 9.615111e-02 seconds
+mpi@turtle:~/Documents/classes/CSCI615/joshua.denio-Lab02$ 
+
